@@ -1,0 +1,59 @@
+{
+  "name": "acronym",
+  "version": "0.0.0",
+  "description": "acronym in Javascript.",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "jest": "^24.9.0"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "package.json"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": [
+            {
+              "node": "current"
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "test": "jest --no-cache ./*.spec.js",
+    "watch": "jest --no-cache --watch ./*.spec.js",
+    "lint": "eslint .",
+    "lint-test": "eslint . && jest --no-cache ./*.spec.js "
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": "airbnb-base",
+    "rules": {
+      "import/no-unresolved": "off",
+      "import/extensions": "off",
+      "import/prefer-default-export": "off",
+      "import/no-default-export": "off"
+    }
+  }
+}
